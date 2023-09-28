@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <style>
+        
+        .dice {
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+            border: 1px solid white;
+            display: inline-block;
+            margin: 10px;
+            font-size: 48px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dice Game</h1>
+    <div class="dice" id="dice1">1</div>
+    <div class="dice" id="dice2">1</div>
+    <p>Total: <span id="total">0</span></p>
+    <button onclick="rollDice()">Roll Dice</button>
+
+
+    <script>
+        function rollDie() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+
+
+        function rollDice() {
+            const die1 = document.getElementById("dice1");
+            const die2 = document.getElementById("dice2");
+            const totalDisplay = document.getElementById("total");
+
+
+            const result1 = rollDie();
+            const result2 = rollDie();
+            const total = result1 + result2;
+
+
+            die1.textContent = result1;
+            die2.textContent = result2;
+            totalDisplay.textContent = total;
+        }
+    </script>
+</body>
+</html>
+
+
+
